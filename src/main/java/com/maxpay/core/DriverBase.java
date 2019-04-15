@@ -1,4 +1,4 @@
-package core;
+package com.maxpay.core;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;

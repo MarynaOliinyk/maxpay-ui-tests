@@ -1,4 +1,4 @@
-package pages;
+package com.maxpay.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
@@ -15,9 +15,9 @@ public class DashBoardPage {
     @Getter
     private SelenideElement controlPanel = $(By.id("sidebar-dashboard"));
 
-    public void checkSuccessfulLogin() {
-        assertTrue(url().contains("app.php#/app/dashboard"));
-        controlPanel.should(visible, text("Панель управления"));
+    public void checkSuccessfulLogin(String successfulLoginText, String controlPanelText) {
+        assertTrue(url().contains(successfulLoginText));
+        controlPanel.should(visible, text(controlPanelText));
     }
 }
 

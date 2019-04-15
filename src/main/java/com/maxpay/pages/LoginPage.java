@@ -1,4 +1,4 @@
-package pages;
+package com.maxpay.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
@@ -13,12 +13,18 @@ import static com.codeborne.selenide.WebDriverRunner.url;
 import static org.testng.Assert.assertEquals;
 
 public class LoginPage {
-    String url = "https://my-sandbox.maxpay.com/#/signin";
+
     @Getter
     private SelenideElement userField = $(By.id("login-email")),
             passwordField = $(By.id("login-password")),
             loginButton = $(By.xpath("//form[@name='loginForm']//button[@type='submit'][contains(text(),'Войти')]")),
             incorrectCredentialsMessage = $(byText("Некорректны пароль или email"));
+
+    private String url;
+
+    public LoginPage(String url) {
+        this.url = url;
+    }
 
     public void login(String user, String password) {
         open(url);
