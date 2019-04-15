@@ -10,7 +10,7 @@
 
     <properties>
         <testng.version>6.13.1</testng.version>
-        <webdrivermanager.version>1.7.2</webdrivermanager.version>
+        <webdrivermanager.version>3.4.0</webdrivermanager.version>
         <selenide.version>4.5.1</selenide.version>
         <lombok.version>1.16.18</lombok.version>
     </properties>

@@ -5,7 +5,6 @@ import lombok.Getter;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.attribute;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.open;
@@ -18,7 +17,7 @@ public class LoginPage {
     private SelenideElement userField = $(By.id("login-email")),
             passwordField = $(By.id("login-password")),
             loginButton = $(By.xpath("//form[@name='loginForm']//button[@type='submit'][contains(text(),'Войти')]")),
-            incorrectCredentialsMessage = $(byText("Некорректны пароль или email"));
+            incorrectCredentialsMessage = $(By.xpath("//div[@class='form-group']//div[@class='alert alert-danger alert-dismissable push-15']"));
 
     private String url;
 
